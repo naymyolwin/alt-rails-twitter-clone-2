@@ -9,7 +9,6 @@ class TweetsController < ApplicationController
     session = Session.find_by(token: token)
     user = session.user
     @tweet = user.tweets.new(tweet_params)
-    #byebug
     render 'tweets/create' if @tweet.save
   end
 
