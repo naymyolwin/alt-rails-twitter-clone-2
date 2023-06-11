@@ -37,6 +37,7 @@ gem 'mail', '>= 2.8.0.rc1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem "image_processing", ">= 1.2"
+gem "aws-sdk", "~> 3.0"
 
 
 # Use Capistrano for deployment
