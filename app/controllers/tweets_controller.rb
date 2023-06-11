@@ -9,7 +9,10 @@ class TweetsController < ApplicationController
     session = Session.find_by(token: token)
     user = session.user
     @tweet = user.tweets.new(tweet_params)
-    render 'tweets/create' if @tweet.save
+    if @tweet.save
+      TweetMailer.notify(@tweet).deliver!
+      render 'tweets/create'
+    end
   end
 
   def destroy
